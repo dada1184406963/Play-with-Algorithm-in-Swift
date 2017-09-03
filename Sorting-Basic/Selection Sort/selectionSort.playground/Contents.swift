@@ -3,35 +3,6 @@
 import Cocoa
 
 
-/*func swap(a: inout Int, b: inout Int) {
-    print("here")
-    let tmp = a;
-    a = b;
-    b = tmp;
-}*/
-
-
-func generateRand(n: Int, rangeL: Int, rangeR: Int) -> Array<Int> {
-    
-    assert(rangeR >= rangeL)
-    
-    var array = Array<Int>(repeating: 0, count: n)
-    for i in 0..<n {
-        array[i] = Int(arc4random()) % (rangeR - rangeL + 1) + rangeL
-    }
-    
-    return array
-}
-
-func testSortTime(array: inout Array<Int>) {
-    
-    let startTime = clock()
-    selectionSort(array: &array)
-    let endTime = clock()
-    
-    print("The sort has spent \(endTime - startTime)")
-}
-
 func selectionSort(array: inout Array<Int>) {
     
     for i in 0..<array.count - 1 {
@@ -48,6 +19,6 @@ func selectionSort(array: inout Array<Int>) {
 }
 
 
-var array1 = generateRand(n: 2000, rangeL: 0, rangeR: 10000)
+var array1 = generateRand(n: 200, rangeL: 0, rangeR: 10000)
 
-testSortTime(array: &array1)
+testSortTime(array: &array1,sort: selectionSort(array:))
