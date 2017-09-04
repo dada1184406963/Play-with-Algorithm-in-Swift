@@ -19,6 +19,6 @@ func selectionSort(array: inout Array<Int>) {
 }
 
 
-var array1 = generateRand(n: 200, rangeL: 0, rangeR: 10000)
+var array1 = generateRand(n: 2000, rangeL: 0, rangeR: 10000)
 
 testSortTime(array: &array1,sort: selectionSort(array:))
